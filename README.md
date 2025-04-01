@@ -28,6 +28,7 @@ Check the container with `docker ps`
 ## Install pgadmin4
 
 [Ubuntu](https://www.pgadmin.org/download/pgadmin-4-apt/)
+
 [Mac](https://formulae.brew.sh/cask/pgadmin4)
 
 ### Connect to the database with PgAdmin
@@ -77,6 +78,7 @@ go run .
 ### Directly
 
 For Mac: `brew install go`
+
 For Linux and Windows: [instructions](https://go.dev/doc/install#install)
 
 then go to the project's directory and execute:
@@ -87,6 +89,7 @@ go run .
 ## Install direnv 
 
 [For Windows]( https://gist.github.com/rmtuckerphx/4ace28c1605300462340ffa7b7001c6d )
+
 [For Mac]( https://formulae.brew.sh/formula/direnv )
 
 then install the direnv hook:

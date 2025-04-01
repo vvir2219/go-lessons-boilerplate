@@ -2,9 +2,11 @@
 
 ## Install docker
 
-Installation [instructions](https://docs.docker.com/desktop/setup/install)
+For Windows:
+- [https://docs.docker.com/desktop/setup/install/windows-install/]
 
 For Mac:
+- `brew install --cask docker`
 - make sure to open the app before 
 
 For Linux:

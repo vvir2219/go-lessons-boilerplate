@@ -2,7 +2,7 @@
 
 ## Instalation
 
-- install [https://github.com/pressly/goose](goose)
+- install [goose](https://github.com/pressly/goose)
     - show how to create a migration
 - connect to the db from go
 - install sqlc 
@@ -10,7 +10,7 @@
 
 ## Install docker
 
-Installation [https://docs.docker.com/desktop/setup/install](instructions)
+Installation [instructions](https://docs.docker.com/desktop/setup/install)
 
 For Mac:
 - make sure to open the app before 
@@ -27,22 +27,22 @@ Check the container with `docker ps`
 
 ## Install pgadmin4
 
-[https://www.pgadmin.org/download/pgadmin-4-apt/](Ubuntu)
-[https://formulae.brew.sh/cask/pgadmin4](Mac)
+[Ubuntu](https://www.pgadmin.org/download/pgadmin-4-apt/)
+[Mac](https://formulae.brew.sh/cask/pgadmin4)
 
 ### Connect to the database with PgAdmin
 
 Register a new server
 
-![ Register a new server ](assets/readme/pgadmin_register_server.png)
+![ Register a new server ](readme/pgadmin_register_server.png)
 
 Give it a name
 
-![ Give it a name ](assets/readme/pgadmin_register_server_name.png)
+![ Give it a name ](readme/pgadmin_register_server_name.png)
 
 Give it it's properties (the password is `password`) :))
 
-![ Give it it's properties ](assets/readme/pgadmin_register_server_properties.png)
+![ Give it it's properties ](readme/pgadmin_register_server_properties.png)
 
 ## Intall go
 
@@ -77,7 +77,7 @@ go run .
 ### Directly
 
 For Mac: `brew install go`
-For Linux and Windows: [https://go.dev/doc/install#install]
+For Linux and Windows: [instructions](https://go.dev/doc/install#install)
 
 then go to the project's directory and execute:
 ```
@@ -86,8 +86,8 @@ go run .
 
 ## Install direnv 
 
-[https://gist.github.com/rmtuckerphx/4ace28c1605300462340ffa7b7001c6d](For Windows)
-[https://formulae.brew.sh/formula/direnv](For Mac)
+[For Windows]( https://gist.github.com/rmtuckerphx/4ace28c1605300462340ffa7b7001c6d )
+[For Mac]( https://formulae.brew.sh/formula/direnv )
 
 then install the direnv hook:
 ```

@@ -1,12 +1,5 @@
 # Boilerplate go
 
-## Instalation
-
-    - show how to create a migration
-- connect to the db from go
-- install sqlc 
-- ...
-
 ## Install docker
 
 Installation [instructions](https://docs.docker.com/desktop/setup/install)
@@ -121,6 +114,37 @@ direnv: loading ~/prog/tmp/curs1_boilerplate/.envrc
 direnv: export +DB_CONNECTION_STRING +GOOSE_DBSTRING +GOOSE_DRIVER +GOOSE_MIGRATION_DIR
 ```
 
-## Install [goose](https://github.com/pressly/goose)
+## Install [goose](https://github.com/pressly/goose) (read this a bit)
 
+- go to the project's directory and run
+```
+go install github.com/pressly/goose/v3/cmd/goose@latest
+```
 
+- test goose with `goose status`
+- apply migrations with `goose up`
+- rollback migrations with `goose down`
+- create a new migration with `goose create <migration-name> sql` (we usually use sql migrations)
+  this will create a file in `db/migration/<timestamp>_<migration_name>.sql` which you will edit
+  
+
+## Install [sqlc](https://docs.sqlc.dev/en/latest) (read this a bit too)
+
+- go to the project's directory and run
+```
+go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
+```
+
+- then run `sqlc generate`, it should not give any errors
+- this will create the files
+```
+db/db.go               # the DBTX interface and Queries struct
+db/models.go           # db models based on your schema
+db/<query-file>.sql.go # multiple files like this which contain 
+                       # methods on the Queries struct
+                       # generated from the queries you gave
+```
+
+- you have to do `sqlc generate` and restart the server every time
+  you change you schema (add a migration and do `goose up`) and when you
+  add queries

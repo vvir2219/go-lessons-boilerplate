@@ -9,9 +9,9 @@ For Mac:
 
 For Linux:
 - add the user to the docker group `sudo usermod -aG docker <username>`
-- check the docker service `systemctl status docker`, and if it's not active execute `systemctl enable --now docker`
+- check the docker service `sudo systemctl status docker`, and if it's not active execute `sudo systemctl enable --now docker`
 
---
+---
 
 Check the docker installation with `docker run hello-world`
 Start the database docker container with `docker compose up -d` in the project's directory
@@ -116,7 +116,7 @@ direnv: export +DB_CONNECTION_STRING +GOOSE_DBSTRING +GOOSE_DRIVER +GOOSE_MIGRAT
 
 ## Install [goose](https://github.com/pressly/goose) (read this a bit)
 
-- go to the project's directory and run
+go to the project's directory and run
 ```
 go install github.com/pressly/goose/v3/cmd/goose@latest
 ```
@@ -130,13 +130,14 @@ go install github.com/pressly/goose/v3/cmd/goose@latest
 
 ## Install [sqlc](https://docs.sqlc.dev/en/latest) (read this a bit too)
 
-- go to the project's directory and run
+go to the project's directory and run
 ```
 go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
 ```
 
-- then run `sqlc generate`, it should not give any errors
-- this will create the files
+then run `sqlc generate`, it should not give any errors
+
+this will create the files
 ```
 db/db.go               # the DBTX interface and Queries struct
 db/models.go           # db models based on your schema
@@ -148,3 +149,28 @@ db/<query-file>.sql.go # multiple files like this which contain
 - you have to do `sqlc generate` and restart the server every time
   you change you schema (add a migration and do `goose up`) and when you
   add queries
+
+## Install [templ](https://templ.guide/)
+
+go to the project's directory and run
+```
+go install github.com/a-h/templ/cmd/templ@latest
+```
+
+## (Optional) Install wgo and run the project automatically
+
+go to the project's directory and run
+```
+go install github.com/bokwoon95/wgo@latest
+```
+then you can run the project with `./run`
+
+## Run the project
+
+Run migrations `goose up`
+
+Generate the sql queries `sqlc generate`
+
+Generate the templ templates `templ generate`
+
+Start the server `go run .`

@@ -3,10 +3,15 @@
 ## Instalation
 
 - install git, if not found
-- install (direnv)[https://direnv.net/docs/installation.html] and hook it to the shell
+- install [https://direnv.net/docs/installation.html](direnv) and hook it to the shell
 - restart the shell (terminal)
-- install go (show with goenv and without?)
+- install go with [https://github.com/go-nv/goenv/blob/master/INSTALL.md](goenv)
 - install docker
 - start container
   - `docker compose up -d`
-- install 
+- install pgadmin
+- install [https://github.com/pressly/goose](goose)
+    - show how to create a migration
+- connect to the db from go
+- install sqlc 
+- ...

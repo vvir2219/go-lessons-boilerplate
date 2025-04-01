@@ -2,7 +2,6 @@
 
 ## Instalation
 
-- install [goose](https://github.com/pressly/goose)
     - show how to create a migration
 - connect to the db from go
 - install sqlc 
@@ -92,7 +91,13 @@ go run .
 
 [For Mac]( https://formulae.brew.sh/formula/direnv )
 
-then install the direnv hook:
+For Ubuntu:
+```
+wget http://cz.archive.ubuntu.com/ubuntu/pool/universe/d/direnv/direnv_2.32.1-2build1_amd64.deb
+dpkg -i direnv_2.32.1-2build1_amd64.deb
+```
+
+then install the direnv hook (only mac and linux):
 ```
 shell=$(basename "$(echo $SHELL)") 
 case $shell in
@@ -115,3 +120,7 @@ you should see something like this
 direnv: loading ~/prog/tmp/curs1_boilerplate/.envrc                    
 direnv: export +DB_CONNECTION_STRING +GOOSE_DBSTRING +GOOSE_DRIVER +GOOSE_MIGRATION_DIR
 ```
+
+## Install [goose](https://github.com/pressly/goose)
+
+

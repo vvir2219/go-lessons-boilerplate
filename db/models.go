@@ -10,6 +10,6 @@ import (
 
 type User struct {
 	ID       pgtype.UUID `json:"id"`
-	Email    pgtype.Text `json:"email"`
-	Password pgtype.Text `json:"password"`
+	Username string      `json:"username"`
+	Password string      `json:"password"`
 }

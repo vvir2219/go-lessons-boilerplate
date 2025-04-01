@@ -167,7 +167,7 @@ go install github.com/bokwoon95/wgo@latest
 ```
 then you can run the project with `./run`
 
-## Run the project
+## Run the project manually
 
 Run migrations `goose up`
 

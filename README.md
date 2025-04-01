@@ -169,10 +169,10 @@ then you can run the project with `./run`
 
 ## Run the project manually
 
-Run migrations `goose up`
+Run migrations - `goose up`
 
-Generate the sql queries `sqlc generate`
+Generate the sql queries - `sqlc generate`
 
-Generate the templ templates `templ generate`
+Generate the templ templates - `templ generate`
 
-Start the server `go run .`
+Start the server - `go run .`

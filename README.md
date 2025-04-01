@@ -14,7 +14,9 @@ For Linux:
 ---
 
 Check the docker installation with `docker run hello-world`
+
 Start the database docker container with `docker compose up -d` in the project's directory
+
 Check the container with `docker ps`
 
 ## Install pgadmin4

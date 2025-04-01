@@ -66,7 +66,7 @@ Give it it's properties (the password is `password`) :))
 
 ## Install go
 
-### Using goenv
+### Using goenv ([Easier without goenv tho][1])
 
 Execute the following code:
 ```
@@ -94,7 +94,7 @@ goenv install
 go run .
 ```
 
-### Directly
+### [1]: Directly
 
 For Mac: `brew install go`
 

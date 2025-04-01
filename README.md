@@ -44,6 +44,8 @@ Check the container with `docker ps`
 
 ## Install pgadmin4
 
+[Windows](https://www.postgresql.org/ftp/pgadmin/pgadmin4/v9.1/windows/)
+
 [Ubuntu](https://www.pgadmin.org/download/pgadmin-4-apt/)
 
 [Mac](https://formulae.brew.sh/cask/pgadmin4)

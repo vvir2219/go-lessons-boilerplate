@@ -39,7 +39,7 @@ Give it it's properties (the password is `password`) :))
 
 ![ Give it it's properties ](readme/pgadmin_register_server_properties.png)
 
-## Intall go
+## Install go
 
 ### Using goenv
 

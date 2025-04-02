@@ -4,13 +4,22 @@
 
 ### 1. Guess the Number Game  
 **Problem:**  
-Create a command-line game where the program randomly selects a number between 1 and 100, and the user has to guess what it is.
-After each guess, provide feedback:  
-- "Too low!" if the guess is below the number  
-- "Too high!" if the guess is above the number  
-- "Correct!" when the guess is right  
+The program randomly selects a number between 1 and 100.
+The user must guess the number in a limited number of tries (variable), receiving feedback:
+- "Too low!" if the guess is below the number
+- "Too high!" if the guess is above the number
+- "Correct!" if the guess is right
 
-The game should keep running until the correct number is guessed.  
+If the user has lost, return "You have lost!" every time a guess is tried
+If the user won, return "You have won!" every time a guess is tried
+
+Input: integers from user input (guesses)
+Output: feedback strings
+
+Implement the Guess function that would pass the tests, as well as a
+command line user interface that would generate a game (with user given
+max retries), generate a secret random number, then let the user play the game.
+
 **Skills practiced:** loops, conditionals, user input, randomness
 
 ---

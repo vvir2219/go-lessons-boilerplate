@@ -54,15 +54,15 @@ Check the container with `docker ps`
 
 Register a new server
 
-![ Register a new server ](readme/pgadmin_register_server.png)
+![ Register a new server ](pgadmin_register_server.png)
 
 Give it a name
 
-![ Give it a name ](readme/pgadmin_register_server_name.png)
+![ Give it a name ](pgadmin_register_server_name.png)
 
 Give it it's properties (the password is `password`) :))
 
-![ Give it it's properties ](readme/pgadmin_register_server_properties.png)
+![ Give it it's properties ](pgadmin_register_server_properties.png)
 
 ## Install go
 

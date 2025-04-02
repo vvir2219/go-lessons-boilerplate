@@ -105,6 +105,19 @@ then go to the project's directory and execute:
 go run .
 ```
 
+also, add `~/go/bin/` to path
+```
+shell=$(basename "$(echo $SHELL)") 
+case $shell in
+  zsh) rcfile="$HOME/.zshrc" ;;
+  bash) rcfile="$HOME/.bashrc" ;;
+  *) >&2 echo "unsupported shell" && exit 1
+esac
+
+echo 'export PATH="$HOME/go/bin:$PATH"' >> "$rcfile"
+exec $SHELL
+```
+
 ## Install direnv 
 
 [For Windows]( https://gist.github.com/rmtuckerphx/4ace28c1605300462340ffa7b7001c6d )

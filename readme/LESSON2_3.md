@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-You will build a **complete web application** (backend + frontend + database) simulating a real-world marketplace. The application should support user authentication, personalized and public data, product management, and purchase/sale flows.
+You will build a **complete web application** (backend + frontend + database). The application should support user authentication, personalized and public data, pagination, etc.
 
 This is a realistic project that brings together core concepts of web development, RESTful APIs, databases, authorization, business logic, and frontend integration.
 

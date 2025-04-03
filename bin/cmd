@@ -30,7 +30,7 @@ esac
 
 cmd_dir="$(git rev-parse --show-toplevel)/cmd"
 [ $? -ne 0 ] && {
-    cmd_dir="$(realpath ..)/cmd"
+    cmd_dir="$(realpath $(dirname $0))/../cmd"
 }
 
 packages=($(ls "$cmd_dir"))

@@ -1,0 +1,108 @@
+package view
+
+import "math/rand"
+
+css reallyCoolClass(color string) {
+    background: { color };
+    width: 120px;
+    height: 20px;
+}
+
+func getString() (string, error) {
+  return "DEF", nil
+}
+
+templ Hello(text string) {
+    <p>{ text }</p>
+}
+
+templ Chance() {
+    if rand.Int() % 2 == 0 {
+        <p>Ai castigat 1000$</p>
+    } else {
+        <p>Mai incearca</p>
+        { children... }
+    }
+}
+
+
+templ List(items []string) {
+    <ul>
+        for _, item := range items {
+            <li>{ item }</li>
+        }
+    </ul>
+}
+
+var helloHandle = templ.NewOnceHandle()
+
+templ helloIlie(label, name string) {
+  @helloHandle.Once() {
+    <script>
+      function hello(name) {
+        alert({{ label }} + name + '!');
+      }
+    </script>
+  }
+  <input type="button" value={ label } data-name={ name } onclick="hello(this.getAttribute('data-name'))"/>
+}
+
+templ pageIlie() {
+  @helloIlie("Hello User", "user")
+  @helloIlie("Hello World", "world")
+}
+
+templ Base() {
+    {{
+        name := "Stefan" 
+        greeting := "Hello! This"
+        styles := map[string]string {
+            "background": "red",
+            "width": "120px",
+            "height": "20px",
+        }
+    }}
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>Page Title</title>
+        </head>
+        <body>
+            <style>
+                .myClass {
+                    border: 2px solid blue;
+                }
+            </style>
+            <header>
+                <h1>{ name }</h1>
+                <h2>"{ greeting }" comes from ordinary Go code</h2>
+                <button class="myClass" style={styles}>Nu apasati !</button>
+                <input type="checkbox" checked?={ false }>
+                <input 
+                    type="checkbox"
+                    if true {
+                        checked
+                    }
+                >
+                @pageIlie()
+                <p>{ `><><><><` }</p>
+                @Chance() {
+                    {{
+                        feluriDeAMaiIncerca := []string{ 
+                            "Sub capac",
+                            "Si Maine",
+                            "Poate ai noroc",
+                        }
+
+                        blueCoolClass := reallyCoolClass("blue")
+                    }}
+                    @List(feluriDeAMaiIncerca)
+                    <br>
+                    <div class={ reallyCoolClass("red") }></div>
+                    <div class={ blueCoolClass }></div>
+                    <div class={ templ.KV(blueCoolClass, false), templ.KV(reallyCoolClass("red"), true) }></div>
+                }
+            </header>
+        </body>
+    </html>
+}

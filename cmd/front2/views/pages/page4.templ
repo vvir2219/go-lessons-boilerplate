@@ -1,0 +1,77 @@
+package pages
+
+import "fmt"
+
+type TodoItemSpecial struct {
+	Id             string `json:"id"`
+	Selected       bool   `json:"selected"`
+	Value          string `json:"value"`
+}
+
+/*
+    hyperscript inside checkbox input
+
+    _={ fmt.Sprintf(
+        `
+        on change
+            if my checked 
+            then
+                remove @disabled from #%s
+                add @disabled='' to #%s
+            else 
+                add @disabled='' to #%s
+                remove @disabled from #%s
+            end
+        `,
+        idValue1, idValue2,
+        idValue1, idValue2,
+    ) }
+*/
+
+templ Page4(objArray []TodoItemSpecial) {
+    <div class="container mt-5">
+    <h2 class="mb-4 text-center">Special TodoList</h2>
+    <form hx-post="/register" hx-swap="none" hx-ext="form-json" class="needs-validation" novalidate> // doar in form-json merg arrays
+
+        for index, specialTodo := range objArray {
+            {{
+                idValue1 := "value1"
+                idValue2 := "value2"
+            }}
+            <div class="mb-3">
+                // <input type="hidden" name={fmt.Sprintf("specialTodoItem[%d].id", index)} value={ specialTodo.Id }>
+                <input 
+                    type="checkbox"
+                    name={fmt.Sprintf("specialTodoItem[%d].id", index+1)}
+                    value={ specialTodo.Id }
+                    checked?={ specialTodo.Selected }
+                >
+
+                <input
+                    id={ idValue1 }
+                    type="text"
+                    name={fmt.Sprintf("specialTodoItem[%d].value", index+1)}
+                    if specialTodo.Selected {
+                        value={ specialTodo.Value }
+                    }
+                >
+                <input 
+                    id={ idValue2 }
+                    type="text"
+                    name={fmt.Sprintf("specialTodoItem[%d].value", index+1)}
+                    if !specialTodo.Selected {
+                        value={ specialTodo.Value }
+                    }
+                >
+            </div>
+        }
+
+      <div class="d-flex flex-row gap-3">
+        <button type="submit" class="btn btn-primary flex-fill">Register</button>
+        <button type="reset" class="btn btn-danger flex-fill">Reset</button>
+      </div>
+      
+
+    </form>
+  </div>
+}

@@ -1,0 +1,28 @@
+package pages
+
+import "fmt"
+
+templ Page2() {
+    {{
+        todoListId := "todoListContainerId"
+    }}
+    <div class="d-flex flex-column">
+        <h1>My todo's list:</h1>
+        <div id={ todoListId } class="d-flex flex-column pb-5">
+        </div>
+        <input style="width: 250px;" type="text" name="description"/>
+        <button
+            hx-post="/todo"
+            hx-target={ fmt.Sprintf("#%s", todoListId) }
+            hx-swap="beforeend"
+            hx-ext="form-json"
+            hx-include="previous input"
+            style="width: 250px;"
+        >Add Button</button>
+    </div>
+}
+
+templ Item(description string) {
+    <p>{ description }</p>
+}
+

@@ -29,7 +29,7 @@ func Theming() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<style>\n        :root {\n            --our-primary: rgb(102, 181, 69);\n\n            --bs-primary: var(--our-primary);\n            --bs-primary-rbg: var(--our-primary);\n        }\n\n        .btn-primary {\n            --bs-btn-bg: var(--our-primary);\n            --bs-btn-border-color: var(--our-primary);\n            --bs-btn-hover-bg: red;\n            --bs-btn-hover-border-color: red;\n        }\n    </style>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<style>\n        :root {\n            --our-primary: rgb(102, 181, 69);\n\n            --bs-primary: var(--our-primary);\n            --bs-primary-rbg: var(--our-primary);\n        }\n\n        .btn-primary {\n            --bs-btn-bg: var(--our-primary);\n            --bs-btn-border-color: var(--our-primary);\n            --bs-btn-hover-bg: red;\n            --bs-btn-hover-border-color: red;\n        }\n\n        p {\n            margin: 0 !important;\n        }\n    </style>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
